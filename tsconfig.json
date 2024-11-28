@@ -8,7 +8,10 @@
     "strict": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "declaration": true, // Generiert Typdefinitionen
+    "declarationDir": "./dist",
     "lib": ["ES2023", "DOM"]
   },
+  "exclude": ["test", "dist"],
   "$schema": "https://json.schemastore.org/tsconfig"
 }

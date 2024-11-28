@@ -2,7 +2,7 @@ import { doesNotThrow } from "node:assert";
 import { describe, it } from "node:test";
 import { CWTAlgorithms } from "../../src/algorithms.js";
 import { ES256 } from "../../src/algorithms/ES256.js";
-import { CWT } from "../../src/cwt.js";
+import CWT from "../../src/cwt.js";
 
 describe("ES256 Check", () => {
   it("check read file functionality", () => {

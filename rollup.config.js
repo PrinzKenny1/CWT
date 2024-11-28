@@ -4,6 +4,9 @@ import typescript from "@rollup/plugin-typescript";
 import { globSync } from "glob";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { cleandir } from "rollup-plugin-cleandir";
+
+const OUT_DIR = "./dist";
 
 export default [
   // ESM-Build
@@ -23,12 +26,17 @@ export default [
     ),
     output: {
       format: "es",
-      dir: "dist",
+      dir: OUT_DIR,
       entryFileNames: "[name].mjs",
       chunkFileNames: "[name]-[hash].mjs",
       preserveModules: true, // Wichtiger Parameter für mehrere Dateien
+      sourcemap: true,
     },
-    plugins: [typescript(), nodeResolve()],
+    plugins: [
+      cleandir(OUT_DIR, { hook: "options", order: "pre" }),
+      typescript(),
+      nodeResolve(),
+    ],
   },
   // CJS-Build
   {
@@ -47,10 +55,11 @@ export default [
     ),
     output: {
       format: "cjs",
-      dir: "dist",
+      dir: OUT_DIR,
       entryFileNames: "[name].cjs",
       chunkFileNames: "[name]-[hash].cjs",
       preserveModules: true, // Wichtiger Parameter für mehrere Dateien
+      sourcemap: true,
     },
     plugins: [typescript(), nodeResolve(), commonjs()],
   },

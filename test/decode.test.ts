@@ -2,7 +2,7 @@ import { deepStrictEqual, throws } from "assert";
 import { describe, it } from "node:test";
 import { CWTAlgorithms } from "../src/algorithms.js";
 import { EdDSA } from "../src/algorithms/EdDSA.js";
-import { CWT } from "../src/cwt.js";
+import CWT from "../src/cwt.js";
 
 const { privateKey, publicKey } = EdDSA.generateKeyPair();
 

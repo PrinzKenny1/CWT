@@ -2,11 +2,13 @@
   "name": "cwt",
   "version": "1.0.0",
   "description": "An implementation of the cwt standard RFC8392",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "main": "./dist/cwt.cjs",
+  "module": "./dist/cwt.mjs",
+  "types": "./dist/cwt.d.ts",
   "exports": {
     "require": "./dist/cwt.cjs",
-    "import": "./dist/cwt.mjs"
+    "import": "./dist/cwt.mjs",
+    "types": "./dist/cwt.d.ts"
   },
   "files": [
     "dist"
@@ -28,6 +30,7 @@
     "glob": "^11.0.0",
     "mocha": "^10.8.2",
     "rollup": "^4.27.2",
+    "rollup-plugin-cleandir": "^3.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.14.0"
