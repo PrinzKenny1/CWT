@@ -2,14 +2,9 @@
   "name": "cwt",
   "version": "1.0.0",
   "description": "An implementation of the cwt standard RFC8392",
-  "main": "./dist/cwt.cjs",
-  "module": "./dist/cwt.mjs",
-  "types": "./dist/cwt.d.ts",
-  "exports": {
-    "require": "./dist/cwt.cjs",
-    "import": "./dist/cwt.mjs",
-    "types": "./dist/cwt.d.ts"
-  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],

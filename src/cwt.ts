@@ -5,7 +5,7 @@ import { CWTPayload } from "./payload.js";
 import { CWTSign } from "./sign.js";
 import { CWTValidationOpts, CWTVerify } from "./verify.js";
 
-export default class CWT {
+export class CWT {
   static sign(header: CWTHeader, payload: CWTPayload, alg: Algorithm) {
     const [protectedHeaderSerialized, unprotectedHeader] =
       CWTHeader.convertToMap(header);
